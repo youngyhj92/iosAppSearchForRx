@@ -26,6 +26,7 @@
 		CDE41E0F2257207600663A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDE41E0E2257207600663A10 /* Assets.xcassets */; };
 		CDE41E122257207600663A10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDE41E102257207600663A10 /* LaunchScreen.storyboard */; };
 		D54278FFFAD5D5FE2C18AFA9 /* Pods_AppSearchForRx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A201CEB080B7D0130029B0C0 /* Pods_AppSearchForRx.framework */; };
+		E45AA960225B669400F91B75 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45AA95F225B669400F91B75 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		CDE41E0E2257207600663A10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDE41E112257207600663A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDE41E132257207600663A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E45AA95F225B669400F91B75 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FD941BD839481DD7D96AB311 /* Pods-AppSearchForRx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSearchForRx.debug.xcconfig"; path = "Target Support Files/Pods-AppSearchForRx/Pods-AppSearchForRx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 			children = (
 				CDE41E092257207400663A10 /* MainViewController.swift */,
 				CD915D5C2257925600EDFE0B /* ResultVIewController.swift */,
+				E45AA95F225B669400F91B75 /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45AA960225B669400F91B75 /* DetailViewController.swift in Sources */,
 				CD915D6C2258717800EDFE0B /* Network.swift in Sources */,
 				CDE41E0A2257207400663A10 /* MainViewController.swift in Sources */,
 				CD915D6E22587F9900EDFE0B /* SearchRepository.swift in Sources */,
@@ -482,13 +486,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AppSearchForRx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Home.AppSearchForRx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -500,13 +505,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AppSearchForRx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Home.AppSearchForRx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

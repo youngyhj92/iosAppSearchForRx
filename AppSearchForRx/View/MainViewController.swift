@@ -30,6 +30,7 @@ class MainViewController : UITableViewController {
     
     private func setSearchController() {
         searchResultVC = ResultViewController()
+        searchResultVC.tableView.delegate = self
         searchController = UISearchController(searchResultsController: searchResultVC)
         searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
@@ -46,7 +47,7 @@ class MainViewController : UITableViewController {
         searchController.dimsBackgroundDuringPresentation = true
         searchController.searchBar.delegate = self
         definesPresentationContext = true
-        searchResultVC.searchController = self.searchController
+    
     }
     
     private func rxDataInit()  {
@@ -106,9 +107,25 @@ extension MainViewController  {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.searchController.isActive = true
-        self.searchController.searchBar.text = historyList[indexPath.row]
-        searchBarSearchButtonClicked(self.searchController.searchBar)
+        if self.searchController.isActive == false  {
+            self.searchController.isActive = true
+            self.searchController.searchBar.text = historyList[indexPath.row]
+            searchBarSearchButtonClicked(self.searchController.searchBar)
+        }  else {
+            if searchResultVC.isSearching == true  {
+                searchController.searchBar.text = searchResultVC.filteredResult[indexPath.row]
+                searchBarSearchButtonClicked(searchController.searchBar)
+            }  else {
+                guard let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "appDetailInfoView") as? DetailViewController else {
+                    print("err")
+                    return
+                }
+                
+                detailVC.detailInfo = searchResultVC.resultContents?[indexPath.row]
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
+        
     }
 }
 
@@ -121,6 +138,7 @@ extension MainViewController : UISearchControllerDelegate {
 }
 
 extension MainViewController : UISearchBarDelegate  {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchResultVC.isSearching = false
         guard let searchingText = searchBar.text else {
