@@ -27,6 +27,8 @@ class DetailViewController : UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "App Information"
+        screenshotView.dataSource = self
+        
         guard let appInfo = self.detailInfo else {
             return
         }
@@ -37,7 +39,7 @@ class DetailViewController : UIViewController  {
         let logoImageSet = RoundCornerImageProcessor(cornerRadius: 20)
         self.logoImage.kf.setImage(with: info.artworkUrl100, options:[.processor(logoImageSet)])
         self.appName.text = info.trackName
-        self.category.text = info.primaryGenreName
+        self.category.text = info.genres?[0]
         self.sellerName.text = info.artistName
         self.rating.text = info.trackContentRating
         self.descriptionContents.text = info.description
@@ -62,7 +64,7 @@ class DetailViewController : UIViewController  {
 
 
 
-extension DetailViewController : UICollectionViewDataSource, UICollectionViewDelegate  {
+extension DetailViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

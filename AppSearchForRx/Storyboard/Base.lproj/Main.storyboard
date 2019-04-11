@@ -78,14 +78,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnY-5K-sYc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wnY-5K-sYc">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6f-ed-Xk7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="696.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="684.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T5W-kL-h2l">
-                                                <rect key="frame" x="8" y="8" width="398" height="680.5"/>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T5W-kL-h2l">
+                                                <rect key="frame" x="8" y="8" width="398" height="668.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dhk-Tu-SGw">
                                                         <rect key="frame" x="0.0" y="0.0" width="398" height="115.5"/>
@@ -135,27 +135,27 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="300"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aJ0-Ts-Iid">
-                                                                    <size key="itemSize" width="192" height="208"/>
+                                                                    <size key="itemSize" width="192" height="288"/>
                                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="screenshotCell" id="fG6-W6-TCy" customClass="screenshotViewCell" customModule="AppSearchForRx" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="46" width="192" height="208"/>
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="screenshotCell" id="fG6-W6-TCy" customClass="ScreenshotViewCell" customModule="AppSearchForRx" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="6" width="192" height="288"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="192" height="208"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="192" height="288"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
                                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvk-NZ-S2q">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="208"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="288"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 </imageView>
                                                                             </subviews>
                                                                         </view>
                                                                         <connections>
-                                                                            <outlet property="screenshot" destination="lvk-NZ-S2q" id="o3r-Vd-x4a"/>
+                                                                            <outlet property="screenshot" destination="lvk-NZ-S2q" id="eSc-5j-c4f"/>
                                                                         </connections>
                                                                     </collectionViewCell>
                                                                 </cells>
@@ -173,13 +173,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Yk-YK-SZy">
                                                         <rect key="frame" x="0.0" y="455.5" width="398" height="96.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIH-8c-msX">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Discription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIH-8c-msX">
                                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;description&gt;" lineBreakMode="headTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="398" translatesAutoresizingMaskIntoConstraints="NO" id="i6g-2c-xKU">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" layoutMarginsFollowReadableWidth="YES" text="&lt;description&gt;" lineBreakMode="headTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="350" translatesAutoresizingMaskIntoConstraints="NO" id="i6g-2c-xKU">
                                                                 <rect key="frame" x="0.0" y="38" width="398" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -194,9 +194,13 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="i6g-2c-xKU" secondAttribute="trailing" id="IQy-BB-hde"/>
+                                                            <constraint firstItem="i6g-2c-xKU" firstAttribute="leading" secondItem="8Yk-YK-SZy" secondAttribute="leading" id="N2l-ee-lUx"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="85Q-fp-h2G">
-                                                        <rect key="frame" x="0.0" y="572" width="398" height="58.5"/>
+                                                        <rect key="frame" x="0.0" y="572" width="398" height="96.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="What's New" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npc-pI-h7V">
                                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
@@ -204,27 +208,39 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Release Note&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="397" translatesAutoresizingMaskIntoConstraints="NO" id="pZi-RS-2x5">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" layoutMarginsFollowReadableWidth="YES" text="&lt;Release Note&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="397" translatesAutoresizingMaskIntoConstraints="NO" id="pZi-RS-2x5">
                                                                 <rect key="frame" x="0.0" y="38" width="398" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42F-Sm-oqp">
+                                                                <rect key="frame" x="0.0" y="66.5" width="398" height="30"/>
+                                                                <state key="normal" title="More"/>
+                                                                <connections>
+                                                                    <action selector="releaseNoteMoreClick:" destination="lE3-ua-p0R" eventType="touchUpInside" id="0qI-5G-lMf"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="pZi-RS-2x5" secondAttribute="trailing" id="O5E-oe-sfB"/>
+                                                            <constraint firstItem="pZi-RS-2x5" firstAttribute="leading" secondItem="85Q-fp-h2G" secondAttribute="leading" id="tqE-hr-1Ir"/>
+                                                        </constraints>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42F-Sm-oqp">
-                                                        <rect key="frame" x="0.0" y="650.5" width="398" height="30"/>
-                                                        <state key="normal" title="More"/>
-                                                        <connections>
-                                                            <action selector="releaseNoteMoreClick:" destination="lE3-ua-p0R" eventType="touchUpInside" id="0qI-5G-lMf"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="8Yk-YK-SZy" firstAttribute="top" secondItem="46c-f9-2I4" secondAttribute="bottom" constant="20" id="3pv-vz-HIv"/>
+                                                    <constraint firstItem="85Q-fp-h2G" firstAttribute="leading" secondItem="T5W-kL-h2l" secondAttribute="leading" id="7Ge-UF-jLE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="85Q-fp-h2G" secondAttribute="trailing" id="Byi-Wd-KTf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dhk-Tu-SGw" secondAttribute="trailing" id="Gnb-Tl-GRH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="46c-f9-2I4" secondAttribute="trailing" id="Qs0-lr-LxF"/>
+                                                    <constraint firstItem="46c-f9-2I4" firstAttribute="leading" secondItem="T5W-kL-h2l" secondAttribute="leading" id="ULN-QF-O9j"/>
                                                     <constraint firstItem="46c-f9-2I4" firstAttribute="leading" secondItem="T5W-kL-h2l" secondAttribute="leading" id="UyS-tf-Q7s"/>
+                                                    <constraint firstItem="8Yk-YK-SZy" firstAttribute="leading" secondItem="T5W-kL-h2l" secondAttribute="leading" id="aCC-MM-roK"/>
+                                                    <constraint firstItem="dhk-Tu-SGw" firstAttribute="leading" secondItem="T5W-kL-h2l" secondAttribute="leading" id="lou-N2-jJJ"/>
                                                     <constraint firstItem="46c-f9-2I4" firstAttribute="top" secondItem="dhk-Tu-SGw" secondAttribute="bottom" constant="20" id="nJV-Z8-7NX"/>
                                                     <constraint firstAttribute="trailing" secondItem="46c-f9-2I4" secondAttribute="trailing" id="wxc-ZZ-wz7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8Yk-YK-SZy" secondAttribute="trailing" id="zUX-xO-dJV"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -243,6 +259,7 @@
                                     <constraint firstItem="B6f-ed-Xk7" firstAttribute="leading" secondItem="wnY-5K-sYc" secondAttribute="leading" id="j2Q-ud-w3J"/>
                                     <constraint firstItem="B6f-ed-Xk7" firstAttribute="top" secondItem="wnY-5K-sYc" secondAttribute="top" id="nfL-Jw-6UL"/>
                                 </constraints>
+                                <viewLayoutGuide key="safeArea" id="ce5-Sw-6Co"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

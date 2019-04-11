@@ -84,7 +84,7 @@ extension ResultViewController  {
                 let logoImageSet = RoundCornerImageProcessor(cornerRadius: 20)
                 cell.logoImageView.kf.setImage(with:appInfo!.artworkUrl100,options:[.processor(logoImageSet)])
                 cell.appTitle.text = appInfo!.trackName
-                cell.appCategory.text = appInfo!.primaryGenreName
+                cell.appCategory.text = appInfo!.genres?[0]
                 cell.appRating.text = appInfo!.trackContentRating
                 
                 guard let screenshots = appInfo?.screenshotUrls else {
