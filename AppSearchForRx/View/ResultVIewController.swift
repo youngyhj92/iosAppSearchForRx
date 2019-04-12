@@ -20,9 +20,6 @@ class ResultViewController : UITableViewController  {
     var searchWord : String? = ""
     var filteredResult = [String]()
     var searchReesultData = SearchResponse(resultCount:-1, results:nil)
-    lazy var resultContents : [AppInformation]? = {
-        return searchReesultData.results
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +71,7 @@ extension ResultViewController  {
             cell.textLabel?.text = filteredResult[indexPath.row]
             return cell
         } else {
-            let appInfo = resultContents?[indexPath.row]
+            let appInfo = searchReesultData.results?[indexPath.row]
             if appInfo == nil  {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "searchNone", for: indexPath) as! SearchResultNoneCell
                 cell.searchWord.text = "'\(searchWord!)'"

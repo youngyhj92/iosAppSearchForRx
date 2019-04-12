@@ -53,7 +53,6 @@ class MainViewController : UITableViewController {
     private func rxDataInit()  {
         viewModel.historyData.subscribe({ event in
             guard let elementData = event.element else {
-                self.historyList = ["No data"]
                 return
             }
             self.historyList = elementData
@@ -121,7 +120,7 @@ extension MainViewController  {
                     return
                 }
                 
-                detailVC.detailInfo = searchResultVC.resultContents?[indexPath.row]
+                detailVC.detailInfo = searchResultVC.searchReesultData.results?[indexPath.row]
                 self.navigationController?.pushViewController(detailVC, animated: true)
             }
         }
@@ -135,6 +134,7 @@ class HistoryTableViewCell : UITableViewCell  {
 
 extension MainViewController : UISearchControllerDelegate {
     
+    
 }
 
 extension MainViewController : UISearchBarDelegate  {
@@ -147,18 +147,24 @@ extension MainViewController : UISearchBarDelegate  {
         }
         viewModel.search(text: searchingText)
         
+        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchResultVC.isSearching = false
         viewModel.loadHistory()
+
     }
 }
 
 extension MainViewController : UISearchResultsUpdating  {
     func updateSearchResults(for searchController: UISearchController) {
-        searchResultVC.isSearching = true
-        searchResultVC.searchWord = searchController.searchBar.text
+        if searchController.searchBar.text != ""  {
+            searchResultVC.isSearching = true
+            searchResultVC.searchWord = searchController.searchBar.text
+            searchResultVC.tableView.reloadData()
+        }
+        
 //        viewModel.loadHistory()
     }
 }
